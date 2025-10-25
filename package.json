@@ -1,0 +1,17 @@
+{
+  "name": "facilitator",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@faremeter/facilitator": "^0.9.0",
+    "@faremeter/payment-evm": "^0.9.0",
+    "@logtape/logtape": "^1.1.2",
+    "hono": "4.9.0",
+    "viem": "2.37.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

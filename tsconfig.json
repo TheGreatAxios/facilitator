@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",                    // Modern enough for top-level await
+    "lib": ["ES2022"],                     // Include latest ES libs
+    "module": "ESNext",                    // Required for Bun’s native ESM support
+    "moduleResolution": "bundler",         // Matches Bun’s resolution logic (like Vite)
+    "allowImportingTsExtensions": true,    // Needed if you use .ts imports
+    "esModuleInterop": true,               // Smooth interop with CommonJS packages
+    "isolatedModules": true,               // Recommended for Bun + TS + fast builds
+    "skipLibCheck": true,                  // Keeps type noise down for Bun internal libs
+    "noEmit": true,                        // Let Bun handle transpilation
+
+    /* Strictness and Safety */
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+
+    /* Output and Module Settings */
+    "resolveJsonModule": true,
+    "moduleDetection": "force",            // Ensures Bun treats files as modules
+    "allowSyntheticDefaultImports": true,
+    "types": ["bun-types"]                 // <-- the magic line for Bun globals
+  },
+  "include": ["src", "bun.d.ts"],
+  "exclude": ["node_modules"]
+}
