@@ -9,6 +9,7 @@ import { prettyJSON } from "hono/pretty-json";
 import { requestId } from "hono/request-id";
 import { secureHeaders } from "hono/secure-headers";
 import { handlersByChain } from "./handlersByCHain";
+import infoController from "./info";
 
 export const logger = getLogger(["facilitator"]);
 
@@ -47,6 +48,8 @@ app.get("/healthz", (c: Context) => {
     status: "healthy"
   })
 });
+
+app.get("/info", infoController);
 
 // Complex, but grabs all tokens dynamically from config once
 const handlers = await Promise.all(handlersByChain.map(async (chain) => await Promise.all(chain.tokens.map(async (token) => await createEVMHandler(chain.info, token.privateKey, token.token)))));
