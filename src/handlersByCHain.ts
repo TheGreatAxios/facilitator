@@ -26,7 +26,7 @@ export const handlersByChain = [
                 "privateKey": getPrivateKey("eip155:324705682"),
                 "token": {
                     address: "0x2e08028E3C4c2356572E096d8EF835cD5C6030bD",
-                    contractName: "USD Coin"
+                    contractName: "Bridged USDC (SKALE Bridge)"
                 }
             }
         ]

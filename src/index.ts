@@ -64,4 +64,7 @@ app.route(
     })
 )
 
-export default app;
+export default {
+  fetch: app.fetch,
+  port: process.env.PORT || 45555
+}
